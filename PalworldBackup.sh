@@ -38,6 +38,6 @@ tar -czvf $BackupFolderPath$Date.tar.gz $Worldsavelocation
 Sum=`echo "$NumToKeep + 1" | bc`
 #
 #Removing old backups
-ls -dt $BackupFolderPath/* | tail -n +$Sum | xargs rm -rf
+ls -dt $BackupFolderPath/* | tail -n +$Sum | xargs rm -rf *.tar.gz
 #
 #
