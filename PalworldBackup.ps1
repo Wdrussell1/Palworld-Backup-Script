@@ -40,12 +40,12 @@ If(!(test-path $BackupFolderPath))
 
 ## Copy/Compress Palworld folder
 # Copy/Compress Worlds
-foreach ($file in Get-ChildItem -Recurse "$Worldsavelocation/worlds")
+foreach ($file in Get-ChildItem -Recurse "$Worldsavelocation")
 {
   if ((get-date).AddMinutes(-5) -gt $file.CreationTime)
   {
   write-host Creating Archive at "$BackupFolderPath"
-Compress-Archive -path "$Worldsavelocation/worlds" -destinationpath $BackupFolderPath\$BackupName.zip -Update 
+Compress-Archive -path "$Worldsavelocation" -destinationpath $BackupFolderPath\$BackupName.zip -Update 
 break
   }
   else
@@ -53,26 +53,7 @@ break
   write-host Server recently saved, waiting 5 minutes and taking backup.
   start-sleep -Seconds 300
   write-host Creating Archive at "$BackupFolderPath"
-Compress-Archive -path "$Worldsavelocation/worlds" -destinationpath $BackupFolderPath\$BackupName.zip -Update
-break
-}
-
-}
-# Copy/Compress Characters adding them to the archive
-foreach ($file in Get-ChildItem -Recurse "$Worldsavelocation/characters")
-{
-  if ((get-date).AddMinutes(-5) -gt $file.CreationTime)
-  {
-  write-host Creating Archive at "$BackupFolderPath"
-Compress-Archive -path "$Worldsavelocation/characters" -destinationpath $BackupFolderPath\$BackupName.zip -Update 
-break
-  }
-  else
-  {
-  write-host Server recently saved, waiting 5 minutes and taking backup.
-  start-sleep -Seconds 300
-  write-host Creating Archive at "$BackupFolderPath"
-Compress-Archive -path "$Worldsavelocation/characters" -destinationpath $BackupFolderPath\$BackupName.zip -Update
+Compress-Archive -path "$Worldsavelocation" -destinationpath $BackupFolderPath\$BackupName.zip -Update
 break
 }
 
