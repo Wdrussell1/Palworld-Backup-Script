@@ -15,7 +15,7 @@ $NumToKeep = 10
 $BackupFolderPath = "$env:USERPROFILE\AppData\Local\Pal\Saved\WorldBackups"
 
 # Name of each unique backup file (This gets today's date and appends the file)
-$BackupName = Get-Date -Format "yyyyMMdd-HHmm"
+$BackupName = Get-Date -Format "yyyyMMdd-HHmmss"
 
 # Server world file location (Default is C:\Users\(USERNAME)\Appdata\Local\Pal\Saved\SaveGames)
 $Worldsavelocation = "$env:USERPROFILE\AppData\Local\Pal\Saved\SaveGames"
