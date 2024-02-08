@@ -1,4 +1,4 @@
-# Palworld-Backup-Script
+Palworld-Backup-Script
 This is a script that backs up Palworld personal and local files
 
 Download the file and run it via Powershell. 
@@ -9,32 +9,32 @@ HOW TO USE THIS SCRIPT: You can run it each day at any point, or you can setup a
 
 
 
-**Windows** variables in the script:
+Windows variables in the script:
 
 
-# How many backups to keep before pruning older copies (Default is 10)
+ How many backups to keep before pruning older copies (Default is 10)
 $NumToKeep = 10
-
-# Where to save backups (Default is C:\Users\(USERNAME)\Appdata\Local\Pal\Saved\WorldBackups)
+----------------------------------------------------------------------------
+Where to save backups (Default is C:\Users\(USERNAME)\Appdata\Local\Pal\Saved\WorldBackups)
 $BackupFolderPath = "$env:USERPROFILE\AppData\Local\Pal\Saved\WorldBackups"
-
-# Name of each unique backup file (This gets today's date and appends the file)
+----------------------------------------------------------------------------
+Name of each unique backup file (This gets today's date and appends the file)
 $BackupName = Get-Date -Format "yyyyMMdd-HHmm"
-
-# Server world file location (Default is C:\Users\(USERNAME)\Appdata\Local\Pal\Saved\SaveGames)
+----------------------------------------------------------------------------
+ Server world file location (Default is C:\Users\(USERNAME)\Appdata\Local\Pal\Saved\SaveGames)
 $Worldsavelocation = "$env:USERPROFILE\AppData\Local\Pal\Saved\SaveGames"
 
 
+----------------------------------------------------------------------------
 
-
-**Linux** variables in the script:
+Linux variables in the script:
 NOTE: Linux version saves backups in the YEAR-MONTH-DAY-HOUR-MINUTE-SECOND format. 
-
-# How many backups to keep before pruning older copies (Default is 10)
+----------------------------------------------------------------------------
+How many backups to keep before pruning older copies (Default is 10)
 NumToKeep = 10
-
-# Where to save backups (Default is $HOME/PalworldBackups/)
+----------------------------------------------------------------------------
+Where to save backups (Default is $HOME/PalworldBackups/)
 BackupFolderPath=$HOME/PalworldBackups/
-
-# Server world file location (Default is $HOME/Steam/steamapps/common/PalServer/Pal/Saved/SaveGames/0/)
+----------------------------------------------------------------------------
+Server world file location (Default is $HOME/Steam/steamapps/common/PalServer/Pal/Saved/SaveGames/0/)
 Worldsavelocation=$HOME/Steam/steamapps/common/PalServer/Pal/Saved/SaveGames/0/
